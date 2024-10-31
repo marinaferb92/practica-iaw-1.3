@@ -8,6 +8,9 @@ En esta practica realizaremos el despliegue de una aplicación web  de la pila L
 ## 2.Creacion de una instancia EC2 en AWS e instalacion de Pila LAMP
 Para la reaizacion de ete apartado seguiremos los pasos detallados en la practica-iaw-1.1 y utilizaremos el script ``` install_lamp.sh ```.
 
+  ![XAFmFL0REO](https://github.com/user-attachments/assets/c18ab7e9-c095-429e-a1f3-16270a55b96e)
+
+
 [Practica-iaw-1.1](https://github.com/marinaferb92/practica-iaw-1.1/tree/main)
 [Script Install LAMP](https://github.com/marinaferb92/practica-iaw-1.1/blob/main/scripts/install_lamp.sh)
 
@@ -15,9 +18,19 @@ Una vez hecho esto nos aseguraremos de que la Pila LAMP esta funcionando correct
 
 - Verificaremos el estado de apache.
 
+  ![zFbjTnu4bO](https://github.com/user-attachments/assets/0794dca3-3187-4728-89ae-d8b5ab3485b9)
+
+
 - Entramos en mysql desde la terminal para ver que esta corriendo.
 
+  ![tTzfzKIiQm](https://github.com/user-attachments/assets/48160a85-c2c8-4183-9e7c-8926f5d1c8d4)
+
+
 - Verificamos la instalacion de PHP
+
+  ![HtI9KkSHKA](https://github.com/user-attachments/assets/3f6ecffa-756a-4ccb-bf96-e16e1e85bf7e)
+  ![q4jHqHBlrs](https://github.com/user-attachments/assets/435ca553-17d9-4a61-9376-85a0e937c1f9)
+
 
 ## 3. Despliegue de la aplicacion web
 
@@ -105,7 +118,9 @@ mysql -u root < /tmp/iaw-practica-lamp/db/database.sql
 
 ## 4. Comprobaciones
 
+![0W3IJNY1uQ](https://github.com/user-attachments/assets/1fb2b993-3a05-4679-8ef0-a038ecacfbaa)
 
+![xJ9B6kE3DP](https://github.com/user-attachments/assets/dd04ff7a-4e3f-48c2-9e61-5fcb1f04d5e4)
 
 
 
