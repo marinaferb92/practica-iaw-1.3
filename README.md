@@ -87,8 +87,21 @@ mysql -u root <<< "CREATE USER '$DB_USER'@'%' IDENTIFIED BY '$DB_PASSWORD'"
 mysql -u root <<< "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'%'" 
 ```
 
+9. ConfiguraMOS el script de SQL con el nombre de la base de datos
 
+Este comando modifica el archivo ``` /tmp/iaw-practica-lamp/db/database.sql ``` para que se remplace el texto **lamp_db** por **$DB_NAME**.
 
+```
+sed  -i "s/lamp_db/$DB_NAME/" /tmp/iaw-practica-lamp/db/database.sql
+```
+
+10. Cargamos la base de datos
+
+Ejecuta el archivo **database.sql** para que cree cualquier objeto definido en cliente MySQL que hemos definido antes.
+
+```
+mysql -u root < /tmp/iaw-practica-lamp/db/database.sql
+```
 
 
 
