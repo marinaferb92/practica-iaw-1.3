@@ -59,7 +59,7 @@ Con ```sed -i``` usamos el editor de flujos sed para buscar y reemplazar texto e
 - La segunda línea reemplaza **username_here** con **$DB_USER**.
 - La tercera línea reemplaza **password_here** con **$DB_PASSWORD**.
 
-Estas variables (**$DB_NAME** **$DB_USER** **$DB_PASSWORD**) estarán configuradas en el archivo ```  .env  ```
+Estas variables (**DB_NAME** ,**DB_USER**, **DB_PASSWORD**) estarán configuradas en el archivo ```  .env  ```
 ```
 sed -i "s/database_name_here/$DB_NAME/" /var/www/html/config.php
 sed -i "s/username_here/$DB_USER/" /var/www/html/config.php
@@ -67,15 +67,22 @@ sed -i "s/password_here/$DB_PASSWORD/" /var/www/html/config.php
 ````
 
 7. Creamos base de datos de ejemplo
-
-
+Con ```mysql -u root``` nos conectamos a MySQL con el usuario root y despues eliminamos con ```"DROP DATABASE IF EXISTS $DB_NAME"``` la base de datos definida si existe y despues la creamos ```"CREATE DATABASE $DB_NAME"```
+En ```.env``` definimos la variable **DB_NAME** con la base de datos que queramos crear.
 
 ```  
 mysql -u root <<< "DROP DATABASE IF EXISTS $DB_NAME"
 mysql -u root <<< "CREATE DATABASE $DB_NAME"
 ```
 
-
+8. Creamos usuario para la base de datos de ejemplo
+Del mismo modo que antes entramos en la base de datos con el usuario root, nos aseguramos que el usuario no existe previamente, lo volvemos a crear identificandolo con una contraseña y le otorgamos toda clase de privilegios para la base de datos que hemos creado antes ````"GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'%'"````
+En ```.env``` definimos las variables **DB_USER** Y **DB_PASSWORD**
+```
+mysql -u root <<< "DROP USER IF EXISTS '$DB_USER'@'%'"
+mysql -u root <<< "CREATE USER '$DB_USER'@'%' IDENTIFIED BY '$DB_PASSWORD'"
+mysql -u root <<< "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'%'" 
+```
 
 
 
