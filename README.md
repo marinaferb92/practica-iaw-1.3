@@ -41,11 +41,39 @@ Eliminaremos cualquier directorio llamado ``` iaw-practica-lamp ``` que exista e
 
 ``` git clone https://github.com/josejuansanchez/iaw-practica-lamp.git /tmp/iaw-practica-lamp ```
 
+4. Clonamos el repositorio de la aplicacion en /tmp
+Clonamos el repositorio de GitHub y el codigo fuente de la aplicación se descarga en ```/tmp/iaw-practica-lamp```
+git clone https://github.com/josejuansanchez/iaw-practica-lamp.git /tmp/iaw-practica-lamp
+
+5. Movemos el codigo fuente de la aplicacion a /var/www/html
+
+Mueve todos los archivos que haya en el directorio **src** del repositorio que hemos clonado antes, a la carpeta ```/var/www/html``` .
+
+```mv /tmp/iaw-practica-lamp/src/* /var/www/html```
+
+
+6. Configuramos el archivo config.php
+   
+Con ```sed -i``` usamos el editor de flujos sed para buscar y reemplazar texto en el archivo ```config.php```.
+- La primera línea reemplaza **database_name_here** con el valor de la variable **$DB_NAME**.
+- La segunda línea reemplaza **username_here** con **$DB_USER**.
+- La tercera línea reemplaza **password_here** con **$DB_PASSWORD**.
+
+Estas variables (**$DB_NAME** **$DB_USER** **$DB_PASSWORD**) estarán configuradas en el archivo ```  .env  ```
+```
+sed -i "s/database_name_here/$DB_NAME/" /var/www/html/config.php
+sed -i "s/username_here/$DB_USER/" /var/www/html/config.php
+sed -i "s/password_here/$DB_PASSWORD/" /var/www/html/config.php
+````
+
+7. Creamos base de datos de ejemplo
 
 
 
-
-
+```  
+mysql -u root <<< "DROP DATABASE IF EXISTS $DB_NAME"
+mysql -u root <<< "CREATE DATABASE $DB_NAME"
+```
 
 
 
