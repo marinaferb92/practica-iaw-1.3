@@ -103,6 +103,7 @@ Ejecuta el archivo **database.sql** para que cree cualquier objeto definido en c
 mysql -u root < /tmp/iaw-practica-lamp/db/database.sql
 ```
 
+## 4. Comprobaciones
 
 
 
