@@ -117,6 +117,7 @@ mysql -u root < /tmp/iaw-practica-lamp/db/database.sql
 ```
 
 ## 4. Comprobaciones
+Vemos la base de datos y la tabla que debería crearse en la app que hemos configurado y entramos a través de un navegador en la dirección IP de nuestra maquina, para ver que efectivamente se ha instalado correctamente la app simple de la pila LAMP con la tabla que se ha copiado desde ``` /tmp/iaw-practica-lamp/db/database.sql ``` 
 
 ![0W3IJNY1uQ](https://github.com/user-attachments/assets/1fb2b993-3a05-4679-8ef0-a038ecacfbaa)
 
